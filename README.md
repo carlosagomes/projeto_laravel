@@ -17,15 +17,15 @@ sudo su chmod -R 777 /bootstrap
 ```
 composer install
 ```
-3 - Concluído o processo de atualização e download dos pacotes do composer, você deve executar as MIGRATIONS com os SEEDS (dados) criando-os no banco de dados MYSQL. Para isso execute o seguinte comando :
+
+3 - Após isso verificar os dados no .env do projeto para rodar o mesmo, o .env_exemple pode ser renomendo e utilizar o mesmo para configuração
+
+4 - Concluído o processo de atualização e download dos pacotes do composer e ajustes do .env, você deve executar as MIGRATIONS com os SEEDS (dados) criando-os no banco de dados MYSQL. Para isso execute o seguinte comando :
 ```
 php artisan migrate
 ```
 
-4 - Após isso verificar os dados no .env do projeto para rodar o mesmo.
-
-
-5 - O Front end desse projeto ficou seprado na pasta public.
+5 - O Front desse projeto ficou seprado na pasta public.
 
 Exemplo de URL : http://localhost:8080/front/index.php
 
