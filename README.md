@@ -2,7 +2,11 @@
 
 ## Projeto desenvolvido em Laravel com Front separado
 
-Passo para execução do projeto, baixo o mesmo em local já com seu ambiente configurado.
+Foi utilizado Laravel, Boostrap, Jquery, SweetAlert, ViaCEP, MYSQL para execução do projeto.
+
+O Front e seprado assim todas as chamadas senda via AJAX retornadas pela API.
+
+Passo para execução do projeto, baixar o mesmo em local já com seu ambiente configurado.
 
 1 - Dentro da pasta do  projeto deve se verificar as permissões de algumas pastas e dar permissão total, usando o seguinte comando.
 ```
