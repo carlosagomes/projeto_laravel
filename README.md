@@ -4,7 +4,7 @@
 
 Foi utilizado Laravel, Boostrap, Jquery, SweetAlert, ViaCEP, MYSQL para execução do projeto.
 
-O Front e seprado assim todas as chamadas senda via AJAX retornadas pela API.
+O Front e seprado assim todas as chamadas sendo via AJAX retornadas pela API.
 
 Passo para execução do projeto, baixar o mesmo em local já com seu ambiente configurado.
 
