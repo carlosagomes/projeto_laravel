@@ -1,3 +1,6 @@
+<?php 
+	$url = "http://".$_SERVER['HTTP_HOST']."";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +20,7 @@
     <div class="container">
         <div class="row">
         	<div class="col-md-12 col-sm-12 col-xs-12" style="padding-bottom:10px">
-        		<a href="/front/index.php" class="btn btn-info">Voltar</a>
+        		<a href="<?php echo $url ?>/front/index.php" class="btn btn-info">Voltar</a>
         	</div>
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="panel panel-info">
@@ -118,14 +121,14 @@
     </div> 
 </body>
 </html>
-<script src="../js/loadingOverlay.js"></script>
+<script src="<?php echo $url ?>/front/js/loadingOverlay.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
     	var spinHandle = loadingOverlay.activate();
 
     	// consulta token para post
 		$.ajax({
-			url: 'http://localhost:8080/token/',
+			url: '<?php echo $url ?>/token/',
 			type: 'GET'			
 		})
 		.done(function(retorno) {
@@ -136,7 +139,7 @@
 		<?php if (isset($_GET['id']) && $_GET['id'] != null): ?>
 			// função para popular o edit de dados.
 	        $.ajax({
-		        url: 'http://localhost:8080/cliente_por_id/'+<?php echo $_GET['id'] ?>,
+		        url: '<?php echo $url ?>/cliente_por_id/'+<?php echo $_GET['id'] ?>,
 		        type: 'GET'         
 	        })
 	        .done(function(retorno) {
@@ -189,7 +192,7 @@
 			var form = $( "#formCliente"  ).serialize();
 
 			$.ajax({
-				url: 'http://localhost:8080/cliente_salvar/',
+				url: '<?php echo $url ?>/cliente_salvar/',
 				type: 'POST',
 				headers: {
                     'X-CSRF-TOKEN': $('#csrf-token').val()

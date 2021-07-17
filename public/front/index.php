@@ -1,3 +1,6 @@
+<?php 
+    $url = "http://".$_SERVER['HTTP_HOST']."";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12" style="padding:10px;margin-right: 5px;">
-                <a href="/front/cliente/editar.php" class="btn btn-info" style="float: right;">Novo Cliente</a>
+                <a href="<?php echo $url ?>/front/cliente/editar.php" class="btn btn-info" style="float: right;">Novo Cliente</a>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="panel panel-info">
@@ -58,7 +61,7 @@
     </div> 
 </body>
 </html>
-<script src="/front/js/loadingOverlay.js"></script>
+<script src="<?php echo $url ?>/front/js/loadingOverlay.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         listarClientes();
@@ -66,7 +69,7 @@
         function listarClientes(){
             var spinHandle = loadingOverlay.activate();
             $.ajax({
-                url: 'http://localhost:8080/cliente_listar/',
+                url: '<?php echo $url ?>/cliente_listar/',
                 type: 'GET'         
             })
             .done(function(retorno) {
@@ -84,7 +87,7 @@
                             html += "<td>"+(val.bairro              == null ? '' : val.bairro)+"</td>";
                             html += "<td>"+(val.cidade              == null ? '' : val.cidade)+"</td>";
                             html += "<td>"+(val.estado              == null ? '' : val.estado)+"</td>";
-                            html += "<td><a style='margin-right:5px' href='/front/cliente/editar.php?id="+(val.id)+"' class='btn btn-info'><i class='glyphicon glyphicon-pencil'></i></a>"+
+                            html += "<td><a style='margin-right:5px' href='<?php echo $url ?>/front/cliente/editar.php?id="+(val.id)+"' class='btn btn-info'><i class='glyphicon glyphicon-pencil'></i></a>"+
                                     "\<a data-id="+(val.id)+"' class='btn btn-danger btn-remover-cliente'><i class='glyphicon glyphicon-trash'></i></a></td>";
                         html += "</tr>";
                     });
@@ -119,7 +122,7 @@
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: 'http://localhost:8080/cliente_delete/'+id,
+                        url: '<?php echo $url ?>/cliente_delete/'+id,
                         type: 'GET'         
                     })
                     .done(function(retorno) {
