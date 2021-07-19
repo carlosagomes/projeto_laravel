@@ -1,5 +1,5 @@
 <?php 
-    $url = "http://".$_SERVER['HTTP_HOST']."";
+    $url = "http://".$_SERVER['HTTP_HOST']."/public/";
 ?>
 <!DOCTYPE html>
 <html>
